@@ -1,0 +1,66 @@
+Run,nr,section,model_name,input_file,subset,y,model_formula,family,yForPrior,Hessian,note
+,1,fig2,inlaRichnessT,cDrichness,Terrestrial,log10(Number+1),cYear,gaussian,Number,,cYear:Realm+ Realm 
+,2,fig2,inlaAbunT,cDabund,Terrestrial,log10(Number+1),cYear,gaussian,Number,,cYear: Realm+ Realm 
+,3,fig2,inlaRarRichT,cDrarRichness,Terrestrial,log10(Number+1),cYear,gaussian,Number,,cYear:Realm+ Realm 
+,4,fig2,InlaShanT,cDshan,Terrestrial,log10(exp(Number)+1),cYear,gaussian,Number,,cYear: Realm+ Realm 
+,5,fig2,inlaENSPIET,cDenspie,Terrestrial,log10(Number+1),cYear,gaussian,Number,,cYear: Realm+ Realm 
+,6,fig2,inlaSimpsonevennessT,cDHillNrs,Terrestrial,SimpEven,cYear,beta,SimpEven,, cYear: Realm+ Realm 
+,7,fig2,inlaCoverageR8T,cdCoverageR8,Terrestrial,log10(Number+1),cYear,gaussian,Number,,cYear: Realm+ Realm 
+,8,fig2,inlaReducedRichnessT,cDrichnessReduced,Terrestrial,log10(Number+1),cYear,gaussian,Number,,cYear: Realm+ Realm 
+,9,fig2,inlaReducedAbunT,cDabundReduced,Terrestrial,log10(Number+1),cYear,gaussian,Number,,cYear: Realm+ Realm 
+,10,fig3,quantile020T,cDlogNr020,Terrestrial,log10(Number+1),cYear,gaussian,Number,,cYear: Realm+ Realm 
+,11,fig3,quantile2040T,cDlogNr2040,Terrestrial,log10(Number+1),cYear,gaussian,Number,,cYear: Realm+ Realm 
+,12,fig3,quantile4060T,cDlogNr4060,Terrestrial,log10(Number+1),cYear,gaussian,Number,,cYear: Realm+ Realm 
+,13,fig3,quantile6080T,cDlogNr6080,Terrestrial,log10(Number+1),cYear,gaussian,Number,,cYear: Realm+ Realm 
+,14,fig3,quantile80100T,cDlogNr80100,Terrestrial,log10(Number+1),cYear,gaussian,Number,,cYear: Realm+ Realm 
+,15,figS5,quartile1T,cDlogQ1,Terrestrial,log10(Number+1),cYear,gaussian,Number,,cYear: Realm+ Realm 
+,16,figS5,quartile2T,cDlogQ2,Terrestrial,log10(Number+1),cYear,gaussian,Number,,cYear: Realm+ Realm 
+,17,figS5,quartile3T,cDlogQ3,Terrestrial,log10(Number+1),cYear,gaussian,Number,,cYear: Realm+ Realm 
+,18,figS5,quartile4T,cDlogQ4,Terrestrial,log10(Number+1),cYear,gaussian,Number,,cYear: Realm+ Realm 
+,19,none,inlaShannonevennessT,cDHillNrs,Terrestrial,ShanEven,cYear,beta,ShanEven,,cYear: Realm+ Realm 
+,20,none,inlaCoverageR7T,cdCoverageR7,Terrestrial,log10(Number+1),cYear,gaussian,Number,,cYear: Realm+ Realm 
+,21,none,inlaCoveragePIE7T,cdCoveragePIE7,Terrestrial,log10(Number+1),cYear,gaussian,Number,,cYear: Realm+ Realm 
+,22,none,inlaCoveragePIE8T,cdCoveragePIE8,Terrestrial,log10(Number+1),cYear,gaussian,Number,,cYear: Realm+ Realm 
+,23,none,inlaReducedENSPIET,cDenspieReduced,Terrestrial,log10(Number+1),cYear,gaussian,Number,,cYear: Realm+ Realm 
+,24,none,inlaReducedRarRichT,cDrarRichReduced,Terrestrial,log10(Number+1),cYear,gaussian,Number,,cYear: Realm+ Realm 
+,25,none,inlaHornT,cDhorn,Terrestrial,Number,cYear,beta,Number,,cYear: Realm+ Realm 
+,26,none,inlaJaccardT,cDjaccard,Terrestrial,Number,cYear,beta,Number,,cYear: Realm+ Realm 
+,27,none,lower10percT,cDlogNr10,Terrestrial,log10(Number+1),cYear,gaussian,Number,,cYear: Realm+ Realm 
+,28,none,upper10percT,cDlogNr90,Terrestrial,log10(Number+1),cYear,gaussian,Number,,cYear: Realm+ Realm 
+,29,none,dominanceRelT,cDdom,Terrestrial,Number,cYear,beta,Number,,cYear: Realm+ Realm 
+,30,none,inlaBrayT,cDbray,Terrestrial,Number,cYear,beta,Number,,cYear: Realm+ Realm 
+,31,none,inlaPielouT,cDpielou,Terrestrial,Number,cYear,beta,Number,,cYear: Realm+ Realm 
+,32,none,inlamcNaughtonDomT,cDmcN,Terrestrial,Number,cYear,beta,Number,,cYear: Realm+ Realm 
+,1,fig2cor,inlaRichnessT,cDrichness,Terrestrial,Number,cYear,tweedie,Number,,cYear:Realm+ Realm 
+,2,fig2cor,inlaAbunT,cDabund,Terrestrial,Number,cYear,tweedie,Number,,cYear: Realm+ Realm 
+,3,fig2cor,inlaRarRichT,cDrarRichness,Terrestrial,Number,cYear,tweedie,Number,,cYear:Realm+ Realm 
+,4,fig2cor,InlaShanT,cDshan,Terrestrial,exp(Number),cYear,tweedie,Number,,cYear: Realm+ Realm 
+,5,fig2cor,inlaENSPIET,cDenspie,Terrestrial,Number,cYear,tweedie,Number,,cYear: Realm+ Realm 
+,6,fig2cor,inlaSimpsonevennessT,cDHillNrs,Terrestrial,SimpEven,cYear,beta,SimpEven,, cYear: Realm+ Realm 
+,7,fig2cor,inlaCoverageR8T,cdCoverageR8,Terrestrial,Number,cYear,tweedie,Number,,cYear: Realm+ Realm 
+,8,fig2cor,inlaReducedRichnessT,cDrichnessReduced,Terrestrial,Number,cYear,tweedie,Number,,cYear: Realm+ Realm 
+,9,fig2cor,inlaReducedAbunT,cDabundReduced,Terrestrial,Number,cYear,tweedie,Number,,cYear: Realm+ Realm 
+,10,fig3cor,quantile020T,cDlogNr020,Terrestrial,Number,cYear,tweedie,Number,,cYear: Realm+ Realm 
+,11,fig3cor,quantile2040T,cDlogNr2040,Terrestrial,Number,cYear,tweedie,Number,,cYear: Realm+ Realm 
+,12,fig3cor,quantile4060T,cDlogNr4060,Terrestrial,Number,cYear,tweedie,Number,,cYear: Realm+ Realm 
+,13,fig3cor,quantile6080T,cDlogNr6080,Terrestrial,Number,cYear,tweedie,Number,,cYear: Realm+ Realm 
+,14,fig3cor,quantile80100T,cDlogNr80100,Terrestrial,Number,cYear,tweedie,Number,,cYear: Realm+ Realm 
+,15,figS5cor,quartile1T,cDlogQ1,Terrestrial,Number,cYear,tweedie,Number,,cYear: Realm+ Realm 
+,16,figS5cor,quartile2T,cDlogQ2,Terrestrial,Number,cYear,tweedie,Number,,cYear: Realm+ Realm 
+,17,figS5cor,quartile3T,cDlogQ3,Terrestrial,Number,cYear,tweedie,Number,,cYear: Realm+ Realm 
+,18,figS5cor,quartile4T,cDlogQ4,Terrestrial,Number,cYear,tweedie,Number,,cYear: Realm+ Realm 
+,19,none,inlaShannonevennessT,cDHillNrs,Terrestrial,ShanEven,cYear,beta,ShanEven,,cYear: Realm+ Realm 
+,20,none,inlaCoverageR7T,cdCoverageR7,Terrestrial,Number,cYear,tweedie,Number,,cYear: Realm+ Realm 
+,21,none,inlaCoveragePIE7T,cdCoveragePIE7,Terrestrial,Number,cYear,tweedie,Number,,cYear: Realm+ Realm 
+,22,none,inlaCoveragePIE8T,cdCoveragePIE8,Terrestrial,Number,cYear,tweedie,Number,,cYear: Realm+ Realm 
+,23,none,inlaReducedENSPIET,cDenspieReduced,Terrestrial,Number,cYear,tweedie,Number,,cYear: Realm+ Realm 
+,24,none,inlaReducedRarRichT,cDrarRichReduced,Terrestrial,Number,cYear,tweedie,Number,,cYear: Realm+ Realm 
+,25,none,inlaHornT,cDhorn,Terrestrial,Number,cYear,beta,Number,,cYear: Realm+ Realm 
+,26,none,inlaJaccardT,cDjaccard,Terrestrial,Number,cYear,beta,Number,,cYear: Realm+ Realm 
+,27,none,lower10percT,cDlogNr10,Terrestrial,Number,cYear,tweedie,Number,,cYear: Realm+ Realm 
+,28,none,upper10percT,cDlogNr90,Terrestrial,Number,cYear,tweedie,Number,,cYear: Realm+ Realm 
+,29,none,dominanceRelT,cDdom,Terrestrial,Number,cYear,beta,Number,,cYear: Realm+ Realm 
+,30,none,inlaBrayT,cDbray,Terrestrial,Number,cYear,beta,Number,,cYear: Realm+ Realm 
+,31,none,inlaPielouT,cDpielou,Terrestrial,Number,cYear,beta,Number,,cYear: Realm+ Realm 
+,32,none,inlamcNaughtonDomT,cDmcN,Terrestrial,Number,cYear,beta,Number,,cYear: Realm+ Realm 
+,33,new,inlaAbunT2026,cDabund2026,Terrestrial,Number,cYear,tweedie,Number,,
