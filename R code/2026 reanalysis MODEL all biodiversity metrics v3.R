@@ -1,6 +1,6 @@
  library (INLA)
 #INLA:::inla.dynload.workaround()
-setwd("C:/Dropbox/Insect Biomass Trends/csvs/")
+setwd("") # for loading the data
 
 # Libraries --------------------------------------------------------------------
 
@@ -12,18 +12,14 @@ library(moments)
 
 # Data files -------------------------------------------------------------------
 
-parameters<- read.csv("C:/Dropbox/work/2017 iDiv/2018 insect biomass/final-insect-diversity-trends2/metricsCor.csv", stringsAsFactors = F)
+parameters<- read.csv("metricsCor.csv", stringsAsFactors = F)
 load("completeData2023pure.RData")
 
 # General params ---------------------------------------------------------------
 
 args <- commandArgs(trailingOnly = T)
 
-# HPC stuff --------------------------------------------------------------------
 
-taskID <- as.integer(Sys.getenv("SLURM_ARRAY_TASK_ID", "1"))
-threads <- 4
- 
 # Exclusions -------------------------------------------------------------------
 
 # exclude freshwater
@@ -130,7 +126,7 @@ cDabund2026<- subset(completeData2026, Unit == "abundance"); dim(cDabund2026)
 # Model objects ----------------------------------------------------------------
 
 # make objects needed for different models
-# 2026: this actually is overkill, because we dont need all of them, but I dont recall which ones we need
+# 2026: this actually is overkill, because we don't analyse all of them
 cDrichness <- subset(completeData2023, Unit == "richness"); dim(cDrichness)
 cDrarRichness <- subset(completeData2023, Unit == "rarefiedRichness"); dim(cDrarRichness)
 cDabund    <- subset(completeData2023, Unit == "abundance"); dim(cDabund)
@@ -239,11 +235,12 @@ all.df<-list(			 cDabund2026 = cDabund2026,
 
 
 
-
+# first run Tweedie models. this is to my current (2026) best knowledge the most fitting to our dataset, 
+# as it handles both integer and non-nterger positive data
 
 # Array job code ---------------------------------------------------------------
 # LOOP STARTS HERE FOR TWEEDIE MODELS
-output_dir<- ("C:/Dropbox/work/2017 iDiv/2018 insect biomass/insect-richness-trends correction/Tweedie models")
+output_dir<- ("/Tweedie models")
 for(i in c(33:37,39:50,  65)){
 
 
@@ -619,6 +616,7 @@ for(i in c(38, 51, 57,58, 61:64)){
 
 
 # LOG 10(n+1) models #####
+# these are the original models as published in Van Klink et al 2024
 output_dir<- "C:/Dropbox/work/2017 iDiv/2018 insect biomass/insect-richness-trends correction/log10 (n+1) models"
 
 for(i in c(1:5 ,7: 18)){
@@ -707,7 +705,7 @@ for(i in c(1:5 ,7: 18)){
                     values = seq(val[1], val[2]), # Rue's addition, no idea what this does or if it's useful in ou
                     hyper = list(theta1 = list(prior = 'pc.prec')), # this was our original prior
                     replicate = Plot_ID_rep)" 
-	))
+	)) # reverse indexing on the autoregressive term ('Plot_ID_rep') introduced in 2026. this speeds up models, but does not affect outcome
 	
 	
 	#print(formul)
@@ -717,16 +715,12 @@ for(i in c(1:5 ,7: 18)){
 	print(startTime)
 	model <- inla( formul,
 								 family = fam,  
-								# control.family = list(hyper = list(p = list(fixed = TRUE, initial = 1.5))),
-								 
 								 control.compute = list(config = FALSE, 
 								 											 dic=TRUE,
 								 											 waic=TRUE, 
 								 											 openmp.strategy="huge", 
 								 											 cpo = FALSE), 
-								 # control.inla = list(#int.strategy="eb", 
-								 # 										tolerance =  1e-08), 
-								 control.predictor = list(link = 1) , 
+								 	 control.predictor = list(link = 1) , 
 								 #verbose = T, 
 								 quantiles=c(0.001, 0.01, 0.025, 0.05, 0.1, 0.3, 0.5, 0.7, 0.9, 0.95, 0.975, 0.99, 0.999)  ,    
 								 num.threads = 4,# 
